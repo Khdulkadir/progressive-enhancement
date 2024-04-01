@@ -7,21 +7,93 @@
 		<link href="assets/styles.css" rel="stylesheet">
 		<style>
 			/* Schrijf hier gewoon je CSS voor dit component */
+			nav {
+				background-color: lightgreen;
+				padding: 0;
+				width: fit-content;
+				position: fixed;
+				left: 100%;
+				height: 100vh;
+				z-index: 1;
+			}
+			.active {
+				left: 0;
+			}
 
+			ul {
+				padding: 0;
+			}
+			
+			li {
+				list-style: none;
+				padding: 0;
+			}
+			
+
+			li a {
+				font-weight: 700;
+				font-family: Arial, Helvetica, sans-serif;
+				text-decoration: none;
+				color: darkblue;
+				width: 100%;
+				padding: 10px 0;
+				display: block;
+				&:hover {
+					color: lightgreen;
+					background-color: darkblue;
+				}
+			}
+
+			svg {
+				cursor: pointer;
+			}
 			/* Hint: kijk eens naar :target */
 		</style>
 		<script type="module">
 			/* Schrijf hier eventueel je client-side JavaScript */
+    // Get the button and the nav elements
+    const menuBtn = document.getElementById('menu-button');
+    const nav = document.getElementById('menu');
+	const close = document.getElementById('close');
 
+    
+    // Add click event listener to the button
+    menuBtn.addEventListener('click', function() {
+        // Toggle the 'active' class on the nav element
+        nav.classList.toggle('active');
+    });
+
+	    close.addEventListener('click', function() {
+        // Toggle the 'active' class on the nav element
+        nav.classList.toggle('active');
+    });
 			/* Hint: dit component kan volledig met CSS, maar met JS kun je 'm helemaal afmaken */
 		</script>
 	</head>
 	<body>
 		<main>
 			<h1>Mobiel menu</h1>
-			
+			<button id="menu-button">Menu</button>
+			<nav id="menu">
+				<ul>
+					<svg id="close" viewBox="0 0 32 32" width="32" height="32">
+						<title>Sluiten</title>
+						<path d="M31.708 25.708c-0-0-0-0-0-0l-9.708-9.708 9.708-9.708c0-0 0-0 0-0 0.105-0.105 0.18-0.227 0.229-0.357 0.133-0.356 0.057-0.771-0.229-1.057l-4.586-4.586c-0.286-0.286-0.702-0.361-1.057-0.229-0.13 0.048-0.252 0.124-0.357 0.228 0 0-0 0-0 0l-9.708 9.708-9.708-9.708c-0-0-0-0-0-0-0.105-0.104-0.227-0.18-0.357-0.228-0.356-0.133-0.771-0.057-1.057 0.229l-4.586 4.586c-0.286 0.286-0.361 0.702-0.229 1.057 0.049 0.13 0.124 0.252 0.229 0.357 0 0 0 0 0 0l9.708 9.708-9.708 9.708c-0 0-0 0-0 0-0.104 0.105-0.18 0.227-0.229 0.357-0.133 0.355-0.057 0.771 0.229 1.057l4.586 4.586c0.286 0.286 0.702 0.361 1.057 0.229 0.13-0.049 0.252-0.124 0.357-0.229 0-0 0-0 0-0l9.708-9.708 9.708 9.708c0 0 0 0 0 0 0.105 0.105 0.227 0.18 0.357 0.229 0.356 0.133 0.771 0.057 1.057-0.229l4.586-4.586c0.286-0.286 0.362-0.702 0.229-1.057-0.049-0.13-0.124-0.252-0.229-0.357z"></path>
+					</svg>
+					<li><a href="index.html">Home</a></li>
+					<li><a href="faq.html">Veelgestelde vragen</a></li>
+					<li><a href="switch.html">Switch control</a></li>
+					<li><a href="menu.html">Mobiel menu</a></li>
+					<li><a href="rating.html">Rating</a></li>
+					<li><a href="carrousel.html">Carrousel</a></li>
+					<li><a href="pickers.html">Favorieten picker</a></li>
+					<li><a href="tabs.html">Tabbladen</a></li>
+					<li><a href="file.html">File image upload met preview</a></li>
+				</ul>
+			</nav>
 			<!-- Hint: Wat heb je nodig, als je op een klein scherm naar het menu wilt? -->
-
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris interdum eget elit eu tincidunt. Donec gravida nulla at justo sollicitudin, hendrerit faucibus diam tincidunt. Pellentesque porta neque quis nunc laoreet congue. Sed porttitor nec tellus nec semper. Cras pharetra dictum risus ut sagittis. Aliquam in iaculis arcu. Nulla sit amet diam sit amet mauris placerat laoreet eu vel turpis. Vivamus ac massa ut diam gravida elementum ut nec nulla. Integer vel felis massa. Quisque facilisis enim ornare ultricies mattis. Fusce porta rhoncus ex. Nunc viverra orci at leo fermentum convallis. Morbi sodales, lectus congue aliquam maximus, metus ipsum placerat turpis, vitae venenatis metus erat vel eros. Vestibulum lobortis accumsan elit nec maximus. Vivamus mollis ullamcorper felis, id aliquet tellus volutpat at.</p>
+			<p>In ante sem, faucibus sit amet nisl ut, efficitur mattis augue. Aenean fringilla lorem id metus ultrices bibendum. Quisque eleifend enim purus, eu bibendum mauris blandit nec. Donec vitae purus sed eros ullamcorper vehicula sit amet eu massa. Vestibulum eget mi vel tellus pharetra convallis quis quis nunc. Maecenas bibendum neque sit amet neque ultrices sollicitudin. Donec viverra arcu nec urna accumsan pharetra. Donec pharetra lacinia elementum.</p>
 			<details open>
 				<summary>Demo video</summary>
 				<video src="assets/menu.mp4" width="773" height="863" controls muted autoplay loop>
